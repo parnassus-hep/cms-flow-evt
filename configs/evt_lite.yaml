@@ -1,33 +1,21 @@
-name: rcfm_cms_part
+name: fm_cms_pow_evt_net 
 sigma: 0.0001
 n_steps: 25
-train_type: particle
-flow_type: rcfm
-model_type: knn
-use_knn: false
+train_type: evt
+flow_type: fm
 
-num_epochs: 500
+num_epochs: 5
 learningrate: 3e-5
 opt: lion
-loss_type: mse_and_direction
+loss_type: mse
 
 lr_scheduler: true
-lr_scheduler_dict:
-    gamma: 0.5
-
 use_swa: true
 check_val_every_n_epoch: 1
 gradient_clip_val: 1.0
-train_class: true
-use_global: true
-zero_neutral_vtx: true
-use_scale_info: true
+truth_binary_class: false
 
-sin_cos: true
-
-time_factor: 1000
-
-reduce_ds_train: 2_800_000
+reduce_ds_train: 100_000
 reduce_ds_valid: 35000
 eval_num_events: 10000
 
@@ -37,7 +25,7 @@ entry_start_test: 0
 
 num_workers: 6
 batchsize: 128
-val_batchsize: 1000
+val_batchsize: 5000
 
 eval_dir: /pscratch/sd/a/aelabd/gen_unfolding/cms-flow-evt/FS_evals/
 truth_path_train: /pscratch/sd/a/aelabd/parnassus_examples/data/qcd470_ttbar_train_cms.root
@@ -45,21 +33,14 @@ truth_path_valid: /pscratch/sd/a/aelabd/parnassus_examples/data/qcd470_ttbar_tra
 truth_path_test: /pscratch/sd/a/aelabd/parnassus_examples/data/qcd600_test_cms_100k.root
 
 max_particles: 400
+time_pow: true
+use_global: true
 
+hidden_dim: 128
+global_dim: 16
+n_res_blocks: 3
 
-hidden_dim: 96
-global_dim: 20
-
-act: silu
-ca_type: double
-
-num_dit_layers: 8
-
-num_heads: 6
-mha_config:
-    do_qk_norm: true
-    bias: false
-    attn_type: torch-flex
+act: gelu
 
 var_transform: !include var_transform_ttbar_qcd.yaml
 
@@ -71,7 +52,7 @@ truth_variables:
     - truth_vy
     - truth_vz
     - truth_class
-
+    
 pflow_variables:
     - pflow_pt
     - pflow_eta

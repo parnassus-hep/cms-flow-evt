@@ -26,6 +26,8 @@ resource.setrlimit(resource.RLIMIT_NOFILE, (4096, rlimit[1]))
 
 os.environ["NCCL_SOCKET_NTHREADS"] = "2"
 os.environ["NCCL_NSOCKS_PERTHREAD"] = "4"
+os.environ["COMET_API_KEY"] = "dP7SQEk285l0DsZvRZgPM4cR7"
+os.environ["COMET_WORKSPACE"] = "abdelabd"
 
 yaml.add_constructor(
     "!include", yaml_include.Constructor(base_dir=Path(__file__).parent / "configs")

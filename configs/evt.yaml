@@ -27,10 +27,10 @@ num_workers: 6
 batchsize: 128
 val_batchsize: 5000
 
-eval_dir: /storage/agrp/dmitrykl/fastsim/FS_evals/
-truth_path_train: /storage/agrp/dmitrykl/fastsim/f_delphes/data/full_event/output/QCD_Pt-470to600_TTbar_Merged/merged_train_v2_pt025_eta27_ghost.root
-truth_path_valid: /storage/agrp/dmitrykl/fastsim/f_delphes/data/full_event/output/QCD_Pt-470to600_TTbar_Merged/merged_train_v2_pt025_eta27_ghost.root
-truth_path_test: /storage/agrp/dmitrykl/fastsim/f_delphes/data/full_event/output/QCD_Pt-600to800_TuneZ2_7TeV_pythia6/merged_test_small_v2_pt025_eta27_ghost.root
+eval_dir: /pscratch/sd/a/aelabd/gen_unfolding/cms-flow-evt/FS_evals/
+truth_path_train: /pscratch/sd/a/aelabd/parnassus_examples/data/qcd470_ttbar_train_cms.root
+truth_path_valid: /pscratch/sd/a/aelabd/parnassus_examples/data/qcd470_ttbar_train_cms.root
+truth_path_test: /pscratch/sd/a/aelabd/parnassus_examples/data/qcd600_test_cms_100k.root
 
 max_particles: 400
 time_pow: true

@@ -465,7 +465,7 @@ class FlowNumPFLightning(LightningModule):
 
         canvas.draw()
         w, h = fig.get_size_inches() * fig.get_dpi()
-        image = np.fromstring(canvas.tostring_rgb(), dtype="uint8").reshape(
+        image = np.frombuffer(canvas.tostring_rgb(), dtype="uint8").reshape(
             int(h), int(w), 3
         )
         fig.subplots_adjust(hspace=0.3, wspace=0.3)

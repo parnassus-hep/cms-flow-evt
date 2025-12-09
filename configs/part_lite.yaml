@@ -6,7 +6,7 @@ flow_type: rcfm
 model_type: knn
 use_knn: false
 
-num_epochs: 500
+num_epochs: 5
 learningrate: 3e-5
 opt: lion
 loss_type: mse_and_direction
@@ -27,7 +27,7 @@ sin_cos: true
 
 time_factor: 1000
 
-reduce_ds_train: 2_800_000
+reduce_ds_train: 100_000
 reduce_ds_valid: 35000
 eval_num_events: 10000
 
